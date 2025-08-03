@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav class="navbar">
+                <ul>
+                    <li class ="link active"><a href="#home">Home</a></li>
+                    <li class="link"><a href="#projects">Projects</a></li>
+                    <li class="link"><a href="#about">About</a></li>
+                    <li class="link"><a href="#contact ">Contact </a></li>
+                </ul>
+                <div class="nav-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div>
+            <h2 class="hello">Hello, I am </h2>
+            <h1 class="name">रेनू एक्का
+</h1>
+            </div>
+    </section>
+  
+    <section id="projects">
+        <div class="container3">
+            <h2 class="myProject">My Projects</h2>
+            <!-- my skills section (has to be included)-->
+
+            <div class="project-list">
+                <div class="project" id ="project1">
+                    <h2>
+                       Movie App
+                    </h2>
+                    <p id="movie-text">A user-friendly Android application that lets users browse, search, and explore movies. It displays movie posters, titles, 
+                        and ratings, and provides detailed information about each film using a public movie API.</p>
+                    <img src ="movieApp.png" alt = "MovieApp" width ="300" height="300" style="display: block; margin: 0 auto;">
+    
+                </div>
+
+                <div class="project" id="project2">
+                <h2>
+                    Live Edge Detection App
+                </h2>
+                    <p id="edge-text">An Android application that uses the device camera to detect and highlight edges of objects in real-time.
+                         It's useful for tasks like scanning documents or identifying object boundaries through live video processing.</p>
+                         <img src ="cannyEdge.png" alt = "cannydecImg" width ="350" height="300" style="display: block; margin: 0 auto;">
+                </div>
+
+                <div class="project" id="project3">
+                    <h2>
+                        Guess The Number App
+                    </h2>
+                    <p id="guess-text">A fun Android game where the user tries to guess a randomly generated number between 1 and 100. After each guess,
+                         the app gives hints like “Increase the number” or “Decrease the number” to guide the player.</p>
+                         <img src="guessnoimg.png" alt = "guessTheNum" width="300" height="300" style="display: block; margin: 0 auto;">
+                </div>
+
+            </div>
+        </div>
+    </section>
+      <section id="about">
+        <div class="container2">
+            <h2 class="padded_text2">About Me</h2>
+            <img src="linkedinrenu.jpg" class="linkedIn_img" width="400" height="300"
+             class="image-bordered">
+            <p class="padded_text2">"I'm a passionate front-end and Android developer with experience in various technologies, including Java, Kotlin, Firebase, and modern Android architectures like MVVM, 
+                with a strong focus on building intuitive and efficient mobile applications.I am proficient in technologies like HTML,CSSjavascript,Java,Kotlin,Android Studio,Gradle,Retrofit,Picasso."</p>
+             <div id="right-message">👀 What are you looking for?</div>
+        </div>
+         
+    </section>
+    <section id="contact">
+        <div class="container4">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/xdkdgdve" method="POST">
+                <label for="name">Name</label>
+                <input type="text" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
