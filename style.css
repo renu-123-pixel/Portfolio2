@@ -12,19 +12,72 @@ body {
     background: #f4f4f4;
     line-height: 1.6;
 }
+/*flower cursor*/
+body { 
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><text x='0' y='35' font-size='35'>🌸</text></svg>") 16 16, auto;
+ } 
+
+ /*div-full of flower*/
+ 
+
+ /*setting up images css for phone*/
+img,
+.linkedIn_img,
+.image-bordered {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive background containers (like .hero and #about already have it) */
+.container,
+.container2,
+.project {
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* Container */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
+    height: 150px;
     margin: 0 auto;
     color:rgb(12, 181, 228);
     order: 2px solid red;
     padding: 16px;
+    position: relative;
     border-radius: 8px; 
     border-top: 2px solid black;
 border-bottom: 1px dashed gray;
+overflow: hidden;
+cursor:pointer;
 }
+.flower {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://em-content.zobj.net/thumbs/240/apple/354/cherry-blossom_1f338.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: float 1.5s ease-out forwards;
+      pointer-events: none;
+       filter: drop-shadow(0 0 4px white);
+    }
+
+    @keyframes float {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-40px);
+      }
+    }
 .padded_text2{
     transition: color 0.3s ease;
 }
@@ -177,7 +230,6 @@ header ul li a:hover {
 }
 .name{
     font-size: 80px;
-    color: white;
     text-align: center; 
     text-decoration: dashed;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -185,14 +237,14 @@ header ul li a:hover {
     line-height: 1.5;
 }
 .hello{
-    font-family:Bitcount Single;
+    font-family: 'Arial Narrow Bold', sans-serif;
 }
 
 /* About Section */
 
-
 #about {
-  background-image: url('Images/herosection.jpg');
+  /*background-image: url('Images/herosection.jpg');*/
+  background-color: #E0F2FE;
   background-size: cover;
   background-position: center;
   color: #00D0A4;
@@ -233,7 +285,8 @@ header ul li a:hover {
 #projects {
     padding: 60px 0;
    /* background-image: url(Images/herosection.jpg);*/
-   background-color: #F5F5DC;
+  
+   background-image: url(herosection1.jpg);
 }
 
 .project-list {
@@ -244,8 +297,10 @@ header ul li a:hover {
 }
 
 .project {
+  max-width: 450px;
+  max-height: 450px;
+   z-index: 1; /* Important! */
     flex: 1 1 calc(33.333% - 20px);
-    background: #fff;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -259,8 +314,12 @@ header ul li a:hover {
 }
 
 .project p {
-    font-size: 1em;
-    line-height: 1.5;
+    font-size: 0.9rem;
+  margin: 8px 0;
+  line-height: 1.3;
+  max-height: 3.9em; /* ~3 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project:hover {
@@ -268,10 +327,17 @@ header ul li a:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+.project img{width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  margin-top: 8px;
+}
 
 .project::before {
     content: '';
     position: absolute;
+     z-index: -1; /* Ensures it’s behind */
     top: 0;
     left: 0;
     width: 100%;
@@ -281,56 +347,77 @@ header ul li a:hover {
     transition: opacity 0.3s ease;
 }
 
-.project:hover::before {
-    opacity: 1;
+/* Add glow/shining effect on heading when any .project is hovered */
+.container3:hover .myProject {
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
 }
+
+
+
 #project1{
- background-image: url('Images/herosection.jpg');
+ /*background-image: url('Images/herosection.jpg');*/
+ background-color:#F0F9FF;
   background-size: cover;
   background-position: center;
   color: #00D0A4;
   padding: 100px;
   text-align: center;
 }
+.project1-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 #project1:hover h2,
 #project1:hover p {
   color: #e70f49; /* Hover color */
 }
 #project2{
-     background-image: url('Images/herosection.jpg');
+   /*  background-image: url('Images/herosection.jpg');*/
+     background-color:#F0F9FF;
   background-size: cover;
   background-position: center;
   color: #00D0A4;
   padding: 100px;
   text-align: center;
+}
+.project2-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 #project2:hover h2,
 #project2:hover p {
   color: #FF4081; /* Hover color */
 }
 #project3{
-  background-image: url('Images/herosection.jpg');
+  /*background-image: url('Images/herosection.jpg');*/
+  background-color:#F0F9FF;
   background-size: cover;
   background-position: center;
   color: #00D0A4;
   padding: 100px;
   text-align: center;
 }
-
+.project3-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
 #project3:hover h2,
 #project3:hover p {
   color: #FF4081; /* Hover color */
 }
-.myProject{
-  color: #043de6;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease-out;
-}
-.myProject.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+
+
 /* Contact Section */
 #contact {
     padding: 60px 0;

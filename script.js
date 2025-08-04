@@ -107,8 +107,8 @@ const observer = new IntersectionObserver((entries) => {
 
 faders.forEach(el => observer.observe(el));
 
-const form = document.querySelector("form");
-  form.addEventListener("submit", async (e) => {
+const form1 = document.querySelector("form");
+  form1.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = new FormData(form);
     const res = await fetch(form.action, {
@@ -123,7 +123,44 @@ const form = document.querySelector("form");
       alert("Oops! Something went wrong.");
     }
   });
+
+
+  const container_flower = document.getElementById('flower-box');
+
+  container_flower.addEventListener('mouseenter', () => {
+    const interval = setInterval(() => {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+
+      const size = Math.random() * 20 + 20;
+      flower.style.width = `${size}px`;
+      flower.style.height = `${size}px`;
+
+      flower.textContent = '🌸';
+flower.style.fontSize = `${size}px`;
+flower.style.background = 'none'; // optional to remove background-image
+
+
+      flower.style.left = Math.random() * (container_flower.clientWidth - size) + 'px';
+      flower.style.top = Math.random() * (container_flower.clientHeight - size) + 'px';
+
+      container_flower.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 1500);
+    }, 200);
+
+    container_flower.addEventListener('mouseleave', () => {
+      clearInterval(interval);
+    }, { once: true });
+  });
   
+  container_flower.addEventListener('touchstart', () => {
+startFlowerAnimation();
+});
+
+
 
 });
 
