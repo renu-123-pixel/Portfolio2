@@ -161,6 +161,46 @@ startFlowerAnimation();
 });
 
 
+// Get modal elements
+document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const span = item.querySelector('span');
+      span.classList.add('shimmer');
+      setTimeout(() => span.classList.remove('shimmer'), 1500);
+    });
+  });
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+      let count;
+      const width = window.innerWidth;
+
+      // Decide count based on screen size
+      if (width >= 1024) {
+        count = 15; // Desktop
+      } else if (width >= 768) {
+        count = 10; // Tablet
+      } else {
+        count = 6; // Phone
+      }
+
+      const container = document.body;
+      for (let i = 0; i < count; i++) {
+        const flower = document.createElement("div");
+        flower.className = "sticky-cursor";
+        flower.textContent = "🌸";
+
+        // Random position
+        flower.style.left = Math.random() * 100 + "vw";
+        flower.style.top = Math.random() * 100 + "vh";
+
+        // Random animation delay so they don't move in sync
+        flower.style.animationDelay = (Math.random() * 2) + "s";
+
+        container.appendChild(flower);
+      }
+    });
 
 });
 
