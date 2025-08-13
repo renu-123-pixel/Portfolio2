@@ -68,6 +68,38 @@ border-bottom: 1px dashed gray;
 overflow: hidden;
 cursor:pointer;
 }
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Hide the menu by default */
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #f8f8f8;
+        padding: 10px;
+    }
+
+    /* Show when active */
+    .navbar ul.show {
+        display: flex;
+    }
+
+    /* Show hamburger icon */
+    .nav-toggle {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .navbar li {
+        padding: 10px 0;
+    }
+}
 .flower {
       position: absolute;
       width: 30px;

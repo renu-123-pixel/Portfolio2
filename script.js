@@ -202,6 +202,15 @@ document.querySelectorAll('.skill-item').forEach(item => {
       }
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".nav-toggle");
+    const menu = document.querySelector(".navbar ul");
+
+    toggle.addEventListener("click", function () {
+        menu.classList.toggle("show");
+    });
+});
+
 });
 
 
