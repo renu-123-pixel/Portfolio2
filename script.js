@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const message = document.getElementById("right-message");
-   const container = document.querySelector(".container2");
+   const container_proj = document.querySelector(".container2");
 
     container.addEventListener("mousemove", function(e) {
     const bounds = container.getBoundingClientRect();
@@ -68,27 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  container.addEventListener("mouseleave", function() {
+  container_proj.addEventListener("mouseleave", function() {
     message.style.display = "none";
   });
 
-    document.getElementById("project1").addEventListener("click", function (e) {
-    // Prevent redirect when clicking the APK download link
-    if (e.target.tagName.toLowerCase() === 'a') return;
+    container_proj.getElementById("project1").addEventListener("click", function (e) {
+    
     
     window.open("https://github.com/renu-123-pixel/Movie-app", "_blank");
   });
 
-  document.getElementById("project2").addEventListener("click", function (e) {
-    // Prevent redirect when clicking the APK download link
-    if (e.target.tagName.toLowerCase() === 'a') return;
+  container_proj.getElementById("project2").addEventListener("click", function (e) {
+    
     
     window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git", "_blank");
   });
 
-  document.getElementById("project3").addEventListener("click", function (e) {
-    // Prevent redirect when clicking the APK download link
-    if (e.target.tagName.toLowerCase() === 'a') return;
+  container_proj.getElementById("project3").addEventListener("click", function (e) {
+ 
     
     window.open("https://github.com/renu-123-pixel/GuessTheNumber-android-.git", "_blank");
   });
@@ -203,13 +200,55 @@ document.querySelectorAll('.skill-item').forEach(item => {
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".nav-toggle");
-    const menu = document.querySelector(".navbar ul");
+            const toggle = document.querySelector(".nav-toggle");
+            const menu = document.querySelector(".navbar ul");
+            const links = document.querySelectorAll(".link");
 
-    toggle.addEventListener("click", function () {
-        menu.classList.toggle("show");
-    });
-});
+            // Toggle mobile menu
+            toggle.addEventListener("click", function () {
+                menu.classList.toggle("show");
+                
+                // Animate toggle button
+                if (menu.classList.contains("show")) {
+                    toggle.style.transform = "rotate(90deg)";
+                } else {
+                    toggle.style.transform = "rotate(0deg)";
+                }
+            });
+
+            // Close menu when clicking on a link (mobile)
+            links.forEach(link => {
+                link.addEventListener("click", function() {
+                    if (window.innerWidth <= 768) {
+                        menu.classList.remove("show");
+                        toggle.style.transform = "rotate(0deg)";
+                    }
+                    
+                    // Update active link
+                    links.forEach(l => l.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener("resize", function() {
+                if (window.innerWidth > 768) {
+                    menu.classList.remove("show");
+                    toggle.style.transform = "rotate(0deg)";
+                }
+            });
+
+            // Close menu when clicking outside (mobile)
+            document.addEventListener("click", function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+                        menu.classList.remove("show");
+                        toggle.style.transform = "rotate(0deg)";
+                    }
+                }
+            });
+        });
+    </script>
 
 });
 

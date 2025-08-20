@@ -435,8 +435,8 @@ header ul li a:hover {
 }
 
 .project {
-  max-width: 450px;
-  max-height: 450px;
+  max-width: auto;
+  max-height: 500px;
    z-index: 1; /* Important! */
     flex: 1 1 calc(33.333% - 20px);
     padding: 20px;
@@ -455,7 +455,6 @@ header ul li a:hover {
     font-size: 0.9rem;
   margin: 8px 0;
   line-height: 1.3;
-  max-height: 3.9em; /* ~3 lines */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -464,12 +463,6 @@ header ul li a:hover {
     background-color:yellowgreen;
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.project img{width: 100%;
-  height: auto;
-  max-height: 250px;
-  object-fit: cover;
-  margin-top: 8px;
 }
 
 .project::before {
@@ -515,7 +508,7 @@ header ul li a:hover {
   text-align: center;
 }
 .project1-image {
-  width: 100%;
+  width: 150px;
   max-width: 200px;
   height: auto;
   display: block;
@@ -528,7 +521,7 @@ header ul li a:hover {
 }
 #project2{
    /*  background-image: url('Images/herosection.jpg');*/
-     background-color:#F0F9FF;
+  background-color:#F0F9FF;
   background-size: cover;
   background-position: center;
   color: #00D0A4;
@@ -556,7 +549,7 @@ header ul li a:hover {
   text-align: center;
 }
 .project3-image {
-  width: 100%;
+  width: 150px;
   max-width: 200px;
   height: auto;
   display: block;
@@ -664,8 +657,6 @@ footer p {
         font-size: 2em;
     }
 
-    .project {
-        flex: 1 1 100%;
-    }
+  
 }
 
