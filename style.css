@@ -73,6 +73,7 @@ cursor:pointer;
 /* 🌸 Responsive layout for phones and tablets */
 @media (max-width: 768px) {
 
+  
   /* General div adjustments */
   div {
     width: 100% !important;
@@ -91,7 +92,6 @@ cursor:pointer;
 
   /* Resize project boxes */
   .project {
-    flex: 1 1 100%;
     width: 90%;
     padding: 15px;
     margin: 10px 0;
@@ -127,16 +127,7 @@ cursor:pointer;
   }
 }
 
-
-    /* Hide the menu by default */
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #f8f8f8;
-        padding: 10px;
-    }
-
+    
     /* Show when active */
     .navbar ul.show {
         display: flex;
@@ -151,7 +142,7 @@ cursor:pointer;
     .navbar li {
         padding: 10px 0;
     }
-}
+
 .flower {
       position: absolute;
       width: 30px;
@@ -536,6 +527,8 @@ header ul li a:hover {
         padding: 40px 20px;
     }
 }
+
+
 
 
 /* Add glow/shining effect on heading when any .project is hovered */
