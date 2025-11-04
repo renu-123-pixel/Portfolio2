@@ -70,11 +70,63 @@ cursor:pointer;
 }
 
 /* MOBILE STYLES */
+/* 🌸 Responsive layout for phones and tablets */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+
+  /* General div adjustments */
+  div {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Stack flex containers vertically */
+  .container, .container2, .project-list, .about, .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Resize project boxes */
+  .project {
+    flex: 1 1 100%;
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  /* Resize hero section text */
+  .hero h2 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  /* Resize name/title text */
+  .name {
+    font-size: 40px;
+  }
+
+  /* Reduce header and footer padding */
+  header, footer {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* About / Projects padding */
+  #about, #projects {
+    padding: 30px 15px;
+  }
+
+  /* Adjust navigation menu */
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+}
+
 
     /* Hide the menu by default */
     .navbar ul {
@@ -477,6 +529,14 @@ header ul li a:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
+/*On small phones, 100px padding is too much.*/
+@media (max-width: 600px) {
+    #about, #projects {
+        padding: 40px 20px;
+    }
+}
+
 
 /* Add glow/shining effect on heading when any .project is hovered */
 .container3:hover .myProject {
