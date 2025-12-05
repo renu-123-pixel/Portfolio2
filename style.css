@@ -70,21 +70,64 @@ cursor:pointer;
 }
 
 /* MOBILE STYLES */
+/* 🌸 Responsive layout for phones and tablets */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    /* Hide the menu by default */
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #f8f8f8;
-        padding: 10px;
-    }
+  
+  /* General div adjustments */
+  div {
+    width: 100% !important;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
+  /* Stack flex containers vertically */
+  .container, .container2, .project-list, .about, .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* Resize project boxes */
+  .project {
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  /* Resize hero section text */
+  .hero h2 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  /* Resize name/title text */
+  .name {
+    font-size: 40px;
+  }
+
+  /* Reduce header and footer padding */
+  header, footer {
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* About / Projects padding */
+  #about, #projects {
+    padding: 30px 15px;
+  }
+
+  /* Adjust navigation menu */
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+    
     /* Show when active */
     .navbar ul.show {
         display: flex;
@@ -99,7 +142,7 @@ cursor:pointer;
     .navbar li {
         padding: 10px 0;
     }
-}
+
 .flower {
       position: absolute;
       width: 30px;
@@ -478,6 +521,16 @@ header ul li a:hover {
     transition: opacity 0.3s ease;
 }
 
+/*On small phones, 100px padding is too much.*/
+@media (max-width: 600px) {
+    #about, #projects {
+        padding: 40px 20px;
+    }
+}
+
+
+
+
 /* Add glow/shining effect on heading when any .project is hovered */
 .container3:hover .myProject {
   color: #00f0ff;
@@ -504,7 +557,7 @@ header ul li a:hover {
   background-size: cover;
   background-position: center;
   color: #00D0A4;
-  padding: 100px;
+  padding: 40px;
   text-align: center;
 }
 .project1-image {
@@ -525,7 +578,7 @@ header ul li a:hover {
   background-size: cover;
   background-position: center;
   color: #00D0A4;
-  padding: 100px;
+  padding: 40px;
   text-align: center;
 }
 .project2-image {
@@ -545,7 +598,7 @@ header ul li a:hover {
   background-size: cover;
   background-position: center;
   color: #00D0A4;
-  padding: 100px;
+  padding: 40px;
   text-align: center;
 }
 .project3-image {
@@ -618,7 +671,7 @@ button {
     border-radius: 4px;
     margin-top: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 button:hover {
@@ -659,4 +712,81 @@ footer p {
 
   
 }
+
+/* Container styling */
+#flower-box {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Navbar default desktop layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Hide toggle button on desktop */
+.nav-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Make links beautiful */
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+/* --------------------- */
+/* MOBILE RESPONSIVE PART */
+/* --------------------- */
+
+@media (max-width: 768px) {
+
+    /* Make title centered on mobile */
+    #home-box h1 {
+        text-align: center;
+        font-size: 26px;
+    }
+
+    /* Show hamburger menu */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Make nav-links hidden at first */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #ffffff;
+        width: 100%;
+        padding: 15px 0;
+        margin-top: 10px;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Show the menu when active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        padding: 10px;
+        font-size: 20px;
+        display: block;
+    }
+}
+
 

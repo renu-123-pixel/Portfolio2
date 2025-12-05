@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = document.getElementById("right-message");
    const container_proj = document.querySelector(".container2");
 
-    container.addEventListener("mousemove", function(e) {
-    const bounds = container.getBoundingClientRect();
+    container_proj.addEventListener("mousemove", function(e) {
+    const bounds = container_proj.getBoundingClientRect();
     const distanceFromRight = bounds.right - e.clientX;
 
     if (distanceFromRight < 50) {
@@ -68,26 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  container_proj.addEventListener("mouseleave", function() {
-    message.style.display = "none";
-  });
+  const container = document.getElementById("project1");
 
-    container_proj.getElementById("project1").addEventListener("click", function (e) {
-    
-    
+  container.addEventListener("click", function (e) {
+    console.log("Clicked!");
     window.open("https://github.com/renu-123-pixel/Movie-app", "_blank");
   });
 
-  container_proj.getElementById("project2").addEventListener("click", function (e) {
-    
-    
+ const container1 = document.getElementById("project2");
+  container1.addEventListener("click", function (e) {
+    console.log("Clicked!");
     window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git", "_blank");
   });
-
-  container_proj.getElementById("project3").addEventListener("click", function (e) {
- 
-    
-    window.open("https://github.com/renu-123-pixel/GuessTheNumber-android-.git", "_blank");
+const container2=document.getElementById("project3");
+  container2.addEventListener("click", function (e) {
+ console.log("Clicked!");
+  window.open("https://github.com/renu-123-pixel/GuessTheNumber-android-.git", "_blank");
   });
 
 const faders = document.querySelectorAll('.myProject');
@@ -122,7 +118,7 @@ const form1 = document.querySelector("form");
   });
 
 
-  const container_flower = document.getElementById('flower-box');
+  const container_flower = document.getElementById('home-box');
 
   container_flower.addEventListener('mouseenter', () => {
     const interval = setInterval(() => {
@@ -247,10 +243,17 @@ document.querySelectorAll('.skill-item').forEach(item => {
                     }
                 }
             });
-        });
-    </script>
+        });  
 
 });
+
+
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
 
 
   
