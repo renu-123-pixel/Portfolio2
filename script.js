@@ -86,6 +86,20 @@ const container2=document.getElementById("project3");
   window.open("https://github.com/renu-123-pixel/GuessTheNumber-android-.git", "_blank");
   });
 
+  const container4=document.getElementById("project4");
+  container4.addEventListener("click",function(e){
+    window.open("https://github.com/renu-123-pixel/ToDoList.git","_blank")
+  });
+
+    const container5=document.getElementById("project5");
+  container5.addEventListener("click",function(e){
+    window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git","_blank")
+  });
+  const container6=document.getElementById("project6");
+  container6.addEventListener("click",function(e){
+    window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git","_blank")
+  });
+
 const faders = document.querySelectorAll('.myProject');
 
 const observer = new IntersectionObserver((entries) => {
