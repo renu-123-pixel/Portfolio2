@@ -68,37 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  const container = document.getElementById("project1");
+  
 
-  container.addEventListener("click", function (e) {
-    console.log("Clicked!");
-    window.open("https://github.com/renu-123-pixel/Movie-app", "_blank");
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Project IDs mapped to GitHub links
+  const projects = {
+    "project1": "https://github.com/renu-123-pixel/Movie-app",
+    "project2": "https://github.com/renu-123-pixel/RealTimeEdgeDetection.git",
+    "project3": "https://github.com/renu-123-pixel/GuessTheNumber-android-.git",
+    "project4": "https://github.com/renu-123-pixel/ToDoList.git",
+    "project5": "https://github.com/renu-123-pixel/RealTimeEdgeDetection.git",
+    "project6": "https://github.com/renu-123-pixel/RealTimeEdgeDetection.git"
+  };
+
+  Object.keys(projects).forEach(id => {
+    const project = document.getElementById(id);
+    project.addEventListener("click", () => {
+      // Flip the card
+      project.classList.toggle("flipped");
+
+      // Open GitHub after flip animation (optional delay)
+      setTimeout(() => {
+        window.open(projects[id], "_blank");
+      }, 300); // 300ms matches the CSS transition
+    });
   });
 
- const container1 = document.getElementById("project2");
-  container1.addEventListener("click", function (e) {
-    console.log("Clicked!");
-    window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git", "_blank");
-  });
-const container2=document.getElementById("project3");
-  container2.addEventListener("click", function (e) {
- console.log("Clicked!");
-  window.open("https://github.com/renu-123-pixel/GuessTheNumber-android-.git", "_blank");
-  });
+});
 
-  const container4=document.getElementById("project4");
-  container4.addEventListener("click",function(e){
-    window.open("https://github.com/renu-123-pixel/ToDoList.git","_blank")
-  });
-
-    const container5=document.getElementById("project5");
-  container5.addEventListener("click",function(e){
-    window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git","_blank")
-  });
-  const container6=document.getElementById("project6");
-  container6.addEventListener("click",function(e){
-    window.open("https://github.com/renu-123-pixel/RealTimeEdgeDetection.git","_blank")
-  });
 
 const faders = document.querySelectorAll('.myProject');
 
@@ -132,50 +130,21 @@ const form1 = document.querySelector("form");
   });
 
 
-  const container_flower = document.getElementById('home-box');
 
-  container_flower.addEventListener('mouseenter', () => {
-    const interval = setInterval(() => {
-      const flower = document.createElement('div');
-      flower.classList.add('flower');
-
-      const size = Math.random() * 20 + 20;
-      flower.style.width = `${size}px`;
-      flower.style.height = `${size}px`;
-
-      flower.textContent = '🌸';
-flower.style.fontSize = `${size}px`;
-flower.style.background = 'none'; // optional to remove background-image
-
-
-      flower.style.left = Math.random() * (container_flower.clientWidth - size) + 'px';
-      flower.style.top = Math.random() * (container_flower.clientHeight - size) + 'px';
-
-      container_flower.appendChild(flower);
-
-      setTimeout(() => {
-        flower.remove();
-      }, 1500);
-    }, 200);
-
-    container_flower.addEventListener('mouseleave', () => {
-      clearInterval(interval);
-    }, { once: true });
-  });
   
   container_flower.addEventListener('touchstart', () => {
 startFlowerAnimation();
 });
 
 
-// Get modal elements
-document.querySelectorAll('.skill-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const span = item.querySelector('span');
-      span.classList.add('shimmer');
-      setTimeout(() => span.classList.remove('shimmer'), 1500);
-    });
-  });
+// // Get modal elements
+// document.querySelectorAll('.skill-item').forEach(item => {
+//     item.addEventListener('click', () => {
+//       const span = item.querySelector('span');
+//       span.classList.add('shimmer');
+//       setTimeout(() => span.classList.remove('shimmer'), 1500);
+//     });
+//   });
 
 
 
@@ -262,12 +231,69 @@ document.querySelectorAll('.skill-item').forEach(item => {
 });
 
 
-    const navToggle = document.getElementById("navToggle");
-    const navLinks = document.querySelector(".nav-links");
+   const navToggle = document.getElementById("nav-toggle");
+const navLinks = document.querySelector(".navbar ul");
 
-    navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+
+
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > lastScrollY) {
+      // scrolling down → hide header
+      header.classList.add("header-hide");
+    } else {
+      // scrolling up → show header
+      header.classList.remove("header-hide");
+    }
+
+    lastScrollY = window.scrollY;
+  });
+
 
 
   
+  const section = document.querySelector(".skil-section");
+  const items = document.querySelectorAll(".skill-item");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          section.classList.add("show");
+
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add("show");
+            }, index * 150);
+          });
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(section);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  
+const lamp = document.getElementById("lamp");
+const screen = document.getElementById("lamp-screen");
+const sound = document.getElementById("switchSound");
+
+lamp.addEventListener("click", () => {
+  sound.play();
+  screen.classList.add("light-on");
+
+  setTimeout(() => {
+    screen.style.display = "none"; // hide screen after lamp click
+  }, 1300);
+});
+
+});

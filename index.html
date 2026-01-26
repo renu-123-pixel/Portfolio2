@@ -5,21 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lamp.css">
 </head>
 <body>
+
+
     <header>
-        <div id="home-box" class="container">
+         <div id="lamp-screen">
+    <div class="lamp" id="lamp">
+      <div class="lamp-top"></div>
+      <div class="lamp-bulb"></div>
+      <div class="lamp-stand"></div>
+      <div class="lamp-base"></div>
+    </div>
+    <p class="lamp-text">Click the lamp to turn on the light</p>
+    <audio id="switchSound">
+      <source src="sound/switch.mp3" type="audio/mpeg">
+    </audio>
+  </div>
             <h1>My Portfolio</h1>
             <nav class="navbar">
+              <div id="home-box" class="container">
+               <div>
+                    <a href="#" class="nav__logo">=</a>
+                </div>
                 <ul>
                     <li class ="link active"><a href="#home">Home</a></li>
                     <li class="link"><a href="#projects">Projects</a></li>
                     <li class="link"><a href="#about">About</a></li>
                     <li class="link"><a href="#contact ">Contact </a></li>
                 </ul>
-                <div class="nav-toggle">☰</div>
-            </nav>
+            <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
         </div>
+         </nav>
     </header>
 <!--sticy-cursor-->
     
@@ -63,8 +83,9 @@
                     <h2>
                        Movie App
                     </h2>
-                    <p id="movie-text">A user-friendly Android application that lets users browse, search, and explore movies. It displays movie posters, titles,and ratings, and provides detailed information about each film using a public movie API.</p>
-                    <img src="movieApp.png" alt="MovieApp" class="project1-image" />
+                    <p id="movie-text">A user-friendly Android application that lets users browse, search, and explore movies. 
+                      It displays movie posters, titles,and ratings, and provides detailed information about each film using a public movie API.</p>
+                    <img src="Images/movieApp.png" alt="MovieApp" class="project1-image" />
                 </div>
 
                 <div class="project" id="project2">
@@ -72,7 +93,7 @@
                     Live Edge Detection App
                 </h2>
                     <p id="edge-text">An Android application that uses the device camera to detect and highlight edges of objects in real-time.It's useful for tasks like scanning documents or identifying object boundaries through live video processing.</p>
-                         <img src ="cannyEdge.png" alt = "cannydecImg" class="project2-image">
+                         <img src ="Images/cannyEdge.png" alt = "cannydecImg" class="project2-image">
                 </div>
 
                 <div class="project" id="project3">
@@ -80,7 +101,7 @@
                         Guess The Number App
                     </h2>
                     <p id="guess-text">A fun Android game where the user tries to guess a randomly generated number between 1 and 100. After each guess,the app gives hints like “Increase the number” or “Decrease the number” to guide the player.</p>
-                         <img src="guessnoimg.png" alt = "guessTheNum" class="project3-image">
+                         <img src="Images/guessnoimg.png" alt = "guessTheNum" class="project3-image">
                 </div>
 
             </div>
@@ -88,24 +109,34 @@
     </section>
       <section id="projects">
         <div class="container3">
-            <h2 class="myProject">My Projects</h2>
+            
             <!-- my skills section (has to be included)-->
 
             <div class="project-list">
-                <div class="project" id ="project4">   <!--rename id = project4 --> 
-                    <h2>
-                       To Do List
-                    </h2>
-                    <p id="movie-text">Developed a To-Do List Android app using Java and Android Studio, allowing users to add, edit, and prioritize daily tasks with a clean and intuitive UI.</p>
-                    <img src="todolist.png" alt="MovieApp" class="project4-image" /><!-- // renamed class = project4-image-->
-                </div>
+              
+              <div class="project" id="project4">
+  <h2>To Do List</h2>
+
+  <div class="project-image-box">
+   
+
+    <div class="project-overlay">
+      <p>
+        Developed a To-Do List Android app using Java and Android Studio,
+        allowing users to add, edit, and prioritize daily tasks with a clean
+        and intuitive UI.
+      </p>
+       <img src="Images/todolist.png" alt="ToDoApp" class="project4-image" />
+    </div>
+  </div>
+</div>
 
                 <div class="project" id="project5"> <!--// renamed id = project5 --> 
                 <h2>
                     Alarm Clock App
                 </h2>
                     <p id="edge-text">Built a customizable alarm clock app in Java with AlarmManager, BroadcastReceiver, and full-screen activity support for snooze and dismiss functionality.</p>
-                         <img src ="alarm_icon.png" alt = "cannydecImg" class="project5-image"> <!-- // rename class = project5-image-->
+                         <img src ="Images/alarm_icon.png" alt = "cannydecImg" class="project5-image"> <!-- // rename class = project5-image-->
                 </div>
 
                 <div class="project" id="project6"> <!--//renamed id = project6-->
@@ -113,7 +144,7 @@
                         Google Clone
                     </h2>
                     <p id="guess-text">Developed a Google Search Clone using HTML, CSS, and JavaScript, replicating the core UI and search functionality with responsive design and dynamic search suggestions.</p>
-                         <img src="googler.png" alt = "guessTheNum" class="project6-image"> <!--//renamed class=project6-image -->
+                         <img src="Images/googler.png" alt = "guessTheNum" class="project6-image"> <!--//renamed class=project6-image -->
                 </div>
 
             </div>
@@ -124,39 +155,39 @@
             <h2 class="skill-text">I have experience with technologies</h2>
   <div class="skill-div">
     <div class="skill-item">
-      <img src="HTML5.jpg" alt="HTML5">
+      <img src="Images/HTML5.jpg" alt="HTML5">
       <span>HTML5</span>
     </div>
     <div class="skill-item">
-      <img src="css_icon.svg" alt="CSS3">
+      <img src="Images/css_icon.svg" alt="CSS3">
       <span>CSS3</span>
     </div>
     <div class="skill-item">
-      <img src="js_icon.png" alt="JavaScript">
+      <img src="Images/js_icon.png" alt="JavaScript">
       <span>JavaScript</span>
     </div>
     <div class="skill-item">
-      <img src="kotlin_icon.png" alt="Kotlin">
+      <img src="Images/kotlin_icon.png" alt="Kotlin">
       <span>Kotlin</span>
     </div>
     <div class="skill-item">
-      <img src="java_icon.png" alt="java">
+      <img src="Images/java_icon.png" alt="java">
       <span>Java</span>
     </div>
     <div class="skill-item">
-      <img src="python_icon.png" alt="Python">
+      <img src="Images/python_icon.png" alt="Python">
       <span>Python</span>
     </div>
     <div class="skill-item">
-      <img src="jetpack_compose.png" alt="jt-pack">
+      <img src="Images/jetpack_compose.png" alt="jt-pack">
       <span>jetpack-compose</span>
     </div>
      <div class="skill-item">
-      <img src="docker.png" alt="docker-logo">
+      <img src="Images/docker.png" alt="docker-logo">
       <span>Docker</span>
     </div>
     <div class="skill-item">
-      <img src="git_logo.png" alt="git">
+      <img src="Images/git_logo.png" alt="git">
       <span>Git</span>
     </div>
 </div>
@@ -167,7 +198,7 @@
       <section id="about">
         <div class="container2">
             <h2 class="padded_text2 shimmer-text">About Me</h2>
-            <img src="linkedinrenu.jpg" class="linkedIn_img" width="400" height="300">
+            <img src="Images/linkedinrenu.jpg" class="linkedIn_img" width="400" height="300">
             <p class="padded_text2 shimmer-text"></p>
             <p  >
   👩‍💻 Frontend & Android developer passionate about clean UI and performance.
@@ -179,11 +210,10 @@
   🚀 Love building real-world apps that solve real problems.
 </p>
 
-             <div id="right-message">👀 What are you looking for?</div>
+            
         </div>
          
     </section>
-    <div class="sticky-cursor">🌸</div>
     <section id="contact">
         <div class="container4">
             <h2>Contact Me</h2>
@@ -201,9 +231,9 @@
 
     <footer>
         <div class="footer-social">
-  <a href="https://github.com/your-username" target="_blank">GitHub</a>
-  <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
-  <a href="https://leetcode.com/your-username" target="_blank">LeetCode</a>
+  <a href="https://github.com/renu-123-pixel" target="_blank">GitHub</a>
+  <a href="https://www.linkedin.com/in/renu-ekka-a8ab7125a/" target="_blank">LinedIn</a>
+  <a href="https://leetcode.com/u/renuekka123" target="_blank">LeetCode</a>
   <a href="https://codeforces.com/profile/your-username" target="_blank">Codeforces</a>
   <a href="https://instagram.com/your-id" target="_blank">Instagram</a>
 </div>
@@ -212,3 +242,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
