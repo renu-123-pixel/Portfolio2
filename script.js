@@ -112,6 +112,9 @@ const observer = new IntersectionObserver((entries) => {
 
 faders.forEach(el => observer.observe(el));
 
+
+
+// ======= FORM SUBMISSION ======
 const form1 = document.querySelector("form");
   form1.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -129,12 +132,6 @@ const form1 = document.querySelector("form");
     }
   });
 
-
-
-  
-  container_flower.addEventListener('touchstart', () => {
-startFlowerAnimation();
-});
 
 
 // // Get modal elements
@@ -231,8 +228,8 @@ startFlowerAnimation();
 });
 
 
-   const navToggle = document.getElementById("nav-toggle");
-const navLinks = document.querySelector(".navbar ul");
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinks = document.querySelector(".navbar ul");
 
 navToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
@@ -282,7 +279,7 @@ navToggle.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  
+  // ===LAMP INTERACTION===
 const lamp = document.getElementById("lamp");
 const screen = document.getElementById("lamp-screen");
 const sound = document.getElementById("switchSound");

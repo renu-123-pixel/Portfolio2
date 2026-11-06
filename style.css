@@ -65,17 +65,17 @@ ul {
   color: #38bdf8;
 }
 
-/* ===================== HERO ===================== */
-.hero {
+/* ===================== HOME ===================== */
+.home {
   min-height: 100vh;
-  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: radial-gradient(circle, #0f172a, #020617);
+  padding:16px 24px;
 }
 
-.hero-content {
+.home-content {
   max-width: 800px;
 }
 
@@ -90,7 +90,7 @@ ul {
   margin: 10px 0;
 }
 
-.hero-subtitle {
+.home-subtitle {
   font-size: 18px;
   color: #cbd5e1;
 }
@@ -111,6 +111,88 @@ ul {
 .social-links img:hover {
   transform: scale(1.2);
 }
+
+/* ===================== RENU_PHOTO ===================== */
+.renu_photo {
+  width: 350PX;
+  height: 350px;
+  border-radius: 60%;
+  border: 3px solid #38bdf8;
+  margin-top: 20px;
+}
+
+
+
+/* ===================== EXPERIENCE ===================== */
+
+.experience-section {
+  width: 80%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: clamp(20px, 4vw, 32px);
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+}
+
+.experience-title {
+  margin-bottom: 24px;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1e293b;
+  color: #38bdf8;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.experience-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+
+.experience-row h3 {
+  color: #22d3ee;
+  font-size: 1.1rem;
+}
+
+.experience-date {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.experience-section .experience-details {
+  display: block;
+  list-style: disc outside;
+  margin-top: 16px;
+  padding-left: 22px;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+
+.experience-details li + li {
+  margin-top: 8px;
+}
+
+.experience-details li::marker {
+  color: #38bdf8;
+}
+
+@media (max-width: 600px) {
+  .experience-section {
+    width: calc(100% - 32px);
+    margin: 32px auto;
+  }
+}
+
+
+
+
+
+
+
+
 
 /* ===================== PROJECTS ===================== */
 #projects {
@@ -231,6 +313,74 @@ ul {
 .container2 p {
   margin: 10px 0;
   color: #cbd5e1;
+}
+
+
+/* ===================== EXPERIENCE ===================== */
+.experience-section {
+  padding: clamp(40px, 8vw, 80px) 10%;
+}
+
+.experience-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  color: #38bdf8;
+  margin-bottom: 32px;
+}
+
+.experience-list {
+  display: grid;
+  gap: 24px;
+}
+
+.experience-entry {
+  padding: 20px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .experience-entry:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+  }
+}
+
+.experience-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+
+.experience-row h3 {
+  color: #22d3ee;
+  font-size: 1.1rem;
+}
+
+.experience-date {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+}
+
+.experience-section .experience-details {
+  display: block;
+  list-style: disc outside;
+  padding-left: 20px;
+  margin-top: 12px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.experience-details li + li {
+  margin-top: 6px;
+}
+
+.experience-details li::marker {
+  color: #38bdf8;
 }
 
 /* ===================== CONTACT ===================== */
